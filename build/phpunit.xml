@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         bootstrap="../vendor/autoload.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false">
+    <testsuites>
+        <testsuite name="Feature">
+            <directory suffix="Test.php">../tests/Feature</directory>
+        </testsuite>
+
+        <testsuite name="Unit">
+            <directory suffix="Test.php">../tests/Unit</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">../app</directory>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="coverage-html" target="coverage" charset="UTF-8" highlight="false" lowUpperBound="50" highLowerBound="80"/>
+        <log type="coverage-clover" target="logs/coverage.xml"/>
+        <log type="coverage-crap4j" target="logs/crap4j.xml"/>
+        <log type="coverage-xml" target="logs/coverage"/>
+        <log type="coverage-php" target="logs/coverage.serialized"/>
+        <log type="junit" target="logs/junit.xml"/>
+        <log type="testdox-html" target="testdox/index.html"/>
+    </logging>
+    <php>
+        <env name="APP_ENV" value="testing"/>
+        <env name="CACHE_DRIVER" value="array"/>
+        <env name="SESSION_DRIVER" value="array"/>
+        <env name="QUEUE_DRIVER" value="sync"/>
+        <env name="MAIL_DRIVER" value="array"/>
+    </php>
+</phpunit>
