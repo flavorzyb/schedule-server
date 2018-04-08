@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<dataset>
+    <table name="schedule_user">
+        <column>id</column>
+        <column>schedule_id</column>
+        <column>schedule_name</column>
+        <column>password</column>
+        <column>nick_name</column>
+        <column>wx_open_id</column>
+        <column>create_time</column>
+        <column>create_ip</column>
+        <row>
+            <value>1</value>
+            <value>11</value>
+            <value>joe</value>
+            <value>password</value>
+            <value>joe alex</value>
+            <value>wx12345677</value>
+            <value>2010-04-26 12:14:20</value>
+            <value>127.0.0.1</value>
+        </row>
+        <row>
+            <value>2</value>
+            <value>112</value>
+            <value>alex</value>
+            <value>password</value>
+            <value>wang alex</value>
+            <value>wx1234567871</value>
+            <value>2015-04-26 12:14:20</value>
+            <value>127.0.0.1</value>
+        </row>
+    </table>
+</dataset>
