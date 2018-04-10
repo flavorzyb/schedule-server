@@ -5,19 +5,10 @@ namespace Tests\Unit\Modules\Mapper;
 use App\Modules\ScheduleUser;
 use App\Modules\Mapper\ScheduleUserMapper;
 use Tests\TestCase;
-use PHPUnit\DbUnit\TestCaseTrait;
 use Tests\TestDb;
 
 class ScheduleUserMapperTest extends TestCase
 {
-    use TestCaseTrait;
-
-    protected function getDataSet()
-    {
-        var_dump('11111111111');
-        return $this->createFlatXMLDataSet(__DIR__ . '/../../../DbUnit/schedule-user.xml');
-    }
-
     /**
      * @var ScheduleUserMapper
      */
@@ -25,6 +16,7 @@ class ScheduleUserMapperTest extends TestCase
     protected function setUp()
     {
         parent::setUp();
+        TestDb::initScheduleUser();
         $this->mapper = new ScheduleUserMapper();
     }
 

@@ -27,19 +27,19 @@ class ScheduleUserMapper
 
     /**
      * create ScheduleUser
-     * @param array $data
+     * @param \stdClass $data
      * @return ScheduleUser
      */
-    private function createScheduleUser(array $data): ScheduleUser {
+    private function createScheduleUser(\stdClass $data): ScheduleUser {
         $result = new ScheduleUser();
-        $result->setId(intval($data['id']));
-        $result->setScheduleId(intval($data['schedule_id']));
-        $result->setScheduleName($data['schedule_name']);
-        $result->setPassword($data['password']);
-        $result->setNickName($data['nick_name']);
-        $result->setWxOpenId($data['wx_open_id']);
-        $result->setCreateTime($data['create_time']);
-        $result->setCreateIp($data['create_ip']);
+        $result->setId(intval($data->id));
+        $result->setScheduleId(intval($data->schedule_id));
+        $result->setScheduleName($data->schedule_name);
+        $result->setPassword($data->password);
+        $result->setNickName($data->nick_name);
+        $result->setWxOpenId($data->wx_open_id);
+        $result->setCreateTime($data->create_time);
+        $result->setCreateIp($data->create_ip);
         return $result;
     }
 }

@@ -22,5 +22,13 @@ class TestDb extends Migration
           UNIQUE KEY `wx_open_id` (`wx_open_id`),
           KEY `create_time` (`create_time`)
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1;");
+
+        $sql = "INSERT INTO `schedule_user` (`schedule_id`, `schedule_name`, `password`, `nick_name`, `wx_open_id`, `create_time`, `create_ip`) " .
+            "VALUES(:scheduleId, :scheduleName, :password, :nickName, :openId, :createTime, :createIp)";
+
+        $data = ['scheduleId' => 11, 'scheduleName'=> 'joe', 'password' => 'password', 'nickName' => 'joe alex', 'openId' => 'wx1234567', 'createTime' => '2010-04-26 12:12:20', 'createIp' => '127.0.0.1'];
+        DB::insert($sql, $data);
+        $data = ['scheduleId' => 12, 'scheduleName'=> 'alex', 'password' => 'password', 'nickName' => 'alex wang', 'openId' => 'wx123456789', 'createTime' => '2015-04-26 12:14:20', 'createIp' => '127.0.0.1'];
+        DB::insert($sql, $data);
     }
 }
