@@ -30,5 +30,8 @@ class ScheduleUserMapperTest extends TestCase
     {
         $result = $this->mapper->findByName('joe');
         $this->assertTrue($result instanceof ScheduleUser);
+
+        $result = $this->mapper->findByName('joe222');
+        $this->assertNull($result);
     }
 }
