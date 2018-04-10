@@ -71,6 +71,17 @@ class ScheduleUserMapper
         return 1 == DB::delete($sql, ['id' => $id]);
     }
 
+    public function fetchAll(): array {
+        $sql = "SELECT * FROM `{$this->tableName}`;";
+        $dataArray = DB::select($sql);
+        $result = [];
+        foreach ($dataArray as $data) {
+            $result[] = $this->createScheduleUser($data);
+        }
+
+        return $result;
+    }
+
     /**
      * create ScheduleUser
      * @param \stdClass $data
@@ -80,13 +91,13 @@ class ScheduleUserMapper
         $result = new ScheduleUser();
         $result->setId(intval($data->id));
         $result->setScheduleId(intval($data->schedule_id));
-        $result->setScheduleName($data->schedule_name);
-        $result->setPassword($data->password);
-        $result->setNickName($data->nick_name);
-        $result->setWxOpenId($data->wx_open_id);
-        $result->setCreateTime($data->create_time);
-        $result->setCreateIp($data->create_ip);
-        $result->setUpdateTime($data->update_time);
+        $result->setScheduleName(trim($data->schedule_name));
+        $result->setPassword(trim($data->password));
+        $result->setNickName(trim($data->nick_name));
+        $result->setWxOpenId(trim($data->wx_open_id));
+        $result->setCreateTime(trim($data->create_time));
+        $result->setCreateIp(trim($data->create_ip));
+        $result->setUpdateTime(trim($data->update_time));
         $result->setStatus(new ScheduleUserStatus($data->status));
         return $result;
     }

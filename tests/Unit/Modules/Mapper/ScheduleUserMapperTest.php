@@ -32,6 +32,9 @@ class ScheduleUserMapperTest extends TestCase
     {
         $result = $this->mapper->findByName('joe');
         $this->assertTrue($result instanceof ScheduleUser);
+        $this->assertEquals(11, $result->getScheduleId());
+        $this->assertEquals('2010-04-26 12:12:20', $result->getCreateTime());
+        $this->assertEquals('2010-04-27 12:12:20', $result->getUpdateTime());
 
         $result = $this->mapper->findByName('joe222');
         $this->assertNull($result);
@@ -47,6 +50,14 @@ class ScheduleUserMapperTest extends TestCase
     public function testDelete() {
         $this->assertFalse($this->mapper->delete(10));
         $this->assertTrue($this->mapper->delete(1));
+    }
+
+    public function testFetchAll() {
+        $result = $this->mapper->fetchAll();
+        $this->assertEquals(2, sizeof($result));
+        foreach ($result as $user) {
+            $this->assertTrue($user instanceof ScheduleUser);
+        }
     }
 
     /**

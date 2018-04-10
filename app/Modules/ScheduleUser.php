@@ -193,7 +193,7 @@ class ScheduleUser
     /**
      * @return array
      */
-    public function toArray() {
+    public function toArray(): array {
         return [
             'id' => $this->id,
             'scheduleId' => $this->scheduleId,
