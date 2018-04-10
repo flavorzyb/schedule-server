@@ -27,7 +27,8 @@
     },
     "autoload-dev": {
         "files": [
-            "tests/TestDb.php"
+            "tests/TestDb.php",
+            "tests/TestObject.php"
         ],
         "psr-4": {
             "Tests\\": "tests/"

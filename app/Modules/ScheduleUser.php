@@ -17,6 +17,18 @@ class ScheduleUser
     private $wxOpenId = '';
     private $createTime = '';
     private $createIp = '';
+    private $status = null;
+    private $updateTime = '';
+    /**
+     * ScheduleUser constructor.
+     */
+    public function __construct()
+    {
+        $this->status = new ScheduleUserStatus();
+        $this->createTime = date('Y-m-d H:i:s');
+        $this->createIp = '127.0.0.1';
+        $this->updateTime = date('Y-m-d H:i:s');
+    }
 
     /**
      * @return int
@@ -147,6 +159,38 @@ class ScheduleUser
     }
 
     /**
+     * @return ScheduleUserStatus
+     */
+    public function getStatus(): ScheduleUserStatus
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param ScheduleUserStatus $status
+     */
+    public function setStatus(ScheduleUserStatus $status): void
+    {
+        $this->status = $status;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUpdateTime()
+    {
+        return $this->updateTime;
+    }
+
+    /**
+     * @param string $updateTime
+     */
+    public function setUpdateTime($updateTime): void
+    {
+        $this->updateTime = $updateTime;
+    }
+
+    /**
      * @return array
      */
     public function toArray() {
@@ -159,6 +203,8 @@ class ScheduleUser
             'wxOpenId' => $this->wxOpenId,
             'createTime' => $this->createTime,
             'createIp' => $this->createIp,
+            'status' => $this->status->getStatus(),
+            'updateTime' => $this->updateTime,
         ];
     }
 }

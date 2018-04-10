@@ -17,6 +17,7 @@ class ComposerStaticInit3559974af6fd2f580a8df348faa2f51e
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         'c5a7c3dcc6b8b60e0ecd866e1076255c' => __DIR__ . '/../..' . '/tests/TestDb.php',
+        'fd65648351ef94a3308318fffe0d08b9' => __DIR__ . '/../..' . '/tests/TestObject.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -335,6 +336,7 @@ class ComposerStaticInit3559974af6fd2f580a8df348faa2f51e
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Modules\\Mapper\\ScheduleUserMapper' => __DIR__ . '/../..' . '/app/Modules/Mapper/ScheduleUserMapper.php',
         'App\\Modules\\ScheduleUser' => __DIR__ . '/../..' . '/app/Modules/ScheduleUser.php',
+        'App\\Modules\\ScheduleUserStatus' => __DIR__ . '/../..' . '/app/Modules/ScheduleUserStatus.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -3622,8 +3624,10 @@ class ComposerStaticInit3559974af6fd2f580a8df348faa2f51e
         'Tests\\Feature\\ExampleTest' => __DIR__ . '/../..' . '/tests/Feature/ExampleTest.php',
         'Tests\\TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Tests\\TestDb' => __DIR__ . '/../..' . '/tests/TestDb.php',
+        'Tests\\TestObject' => __DIR__ . '/../..' . '/tests/TestObject.php',
         'Tests\\Unit\\ExampleTest' => __DIR__ . '/../..' . '/tests/Unit/ExampleTest.php',
         'Tests\\Unit\\Modules\\Mapper\\ScheduleUserMapperTest' => __DIR__ . '/../..' . '/tests/Unit/Modules/Mapper/ScheduleUserMapperTest.php',
+        'Tests\\Unit\\Modules\\ScheduleUserStatusTest' => __DIR__ . '/../..' . '/tests/Unit/Modules/ScheduleUserStatusTest.php',
         'Tests\\Unit\\Modules\\ScheduleUserTest' => __DIR__ . '/../..' . '/tests/Unit/Modules/ScheduleUserTest.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
         'TheSeer\\Tokenizer\\Exception' => __DIR__ . '/..' . '/theseer/tokenizer/src/Exception.php',
